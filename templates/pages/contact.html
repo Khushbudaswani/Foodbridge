@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block title %}Contact Us - Food Bridge{% endblock %}
+
+{% block content %}
+<style>
+  .contact-container {
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .contact-container h2 {
+    font-weight: 700;
+    color: #007bff; /* Bootstrap primary blue */
+    margin-bottom: 1rem;
+  }
+
+  .contact-container p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+  }
+
+  form label {
+    font-weight: 600;
+    color: #333;
+  }
+
+  form input, form textarea {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    width: 100%;
+  }
+
+  form input:focus, form textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+  }
+
+  button.btn-primary {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  button.btn-primary:hover {
+    background: linear-gradient(45deg, #0056b3, #007bff);
+  }
+
+  iframe {
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+</style>
+
+<div class="contact-container">
+  <div class="text-center mb-4">
+    <h2 class="display-5">📬 Get In Touch</h2>
+    <p>Whether you're a donor, volunteer, or supporter — we'd love to hear from you.</p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label>Name</label>
+          <input type="text" name="name" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label>Email</label>
+          <input type="email" name="email" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label>Message</label>
+          <textarea name="message" class="form-control" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+    <div class="col-md-6">
+      <iframe src="https://maps.google.com/maps?q=mumbai&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              width="100%" height="300" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Gallery - Food Bridge{% endblock %}
+{% block content %}
+<h2>Gallery</h2>
+<p>Here are some photos from our food donation drives and volunteer activities.</p>
+
+<div class="row">
+  <div class="col-md-4 mb-3">
+    <img src="{% static 'images/donation1.jpg' %}" class="img-fluid rounded" alt="Donation 1">
+  </div>
+  <div class="col-md-4 mb-3">
+    <img src="{% static 'images/donation2.jpg' %}" class="img-fluid rounded" alt="Donation 2">
+  </div>
+  <div class="col-md-4 mb-3">
+    <img src="{% static 'images/volunteers.jpg' %}" class="img-fluid rounded" alt="Volunteers">
+  </div>
+</div>
+{% endblock %}

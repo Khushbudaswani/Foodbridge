@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Events & Drives - Food Bridge{% endblock %}
+{% block content %}
+<div class="container py-5">
+  <div class="text-center mb-4">
+    <h1 class="display-4">📅 Upcoming Events</h1>
+    <p>Join our donation drives, street food walks & awareness campaigns.</p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card shadow-sm mb-3">
+        <img src="{% static 'images/event1.jpg' %}" class="card-img-top" alt="Monsoon Meal Drive">
+        <div class="card-body">
+          <h5 class="card-title">Monsoon Meal Drive</h5>
+          <p class="card-text">Distributing hot food to slums in Mumbai. July 5–10.</p>
+          <a href="{% url 'join_team' %}" class="btn btn-sm btn-outline-primary">Volunteer</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-sm mb-3">
+        <img src="{% static 'images/event2.jpg' %}" class="card-img-top" alt="School Snack Day">
+        <div class="card-body">
+          <h5 class="card-title">School Snack Day</h5>
+          <p class="card-text">Healthy snacks for 300 kids in Govandi. August 12.</p>
+          <a href="{% url 'donate_food' %}" class="btn btn-sm btn-outline-success">Donate</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-sm mb-3">
+        <img src="{% static 'images/event3.jpg' %}" class="card-img-top" alt="Night Watch">
+        <div class="card-body">
+          <h5 class="card-title">Night Watch</h5>
+          <p class="card-text">Late-night food handout to the homeless in Delhi. July 25.</p>
+          <a href="{% url 'contact' %}" class="btn btn-sm btn-outline-dark">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

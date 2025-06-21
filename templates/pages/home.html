@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Home - Food Bridge{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="position-relative text-white text-center" style="background: url('{% static 'images/hero-food.jpg' %}') no-repeat center center / cover; height: 85vh;">
+  <div class="d-flex flex-column justify-content-center align-items-center h-100" style="background: rgba(0, 0, 0, 0.6);">
+    <h1 class="display-2 fw-bold mb-3 animate__animated animate__fadeInDown">Transform Surplus into Smiles</h1>
+    <p class="lead mb-4 animate__animated animate__fadeInUp">Donate excess food from events, restaurants, and kitchens. We deliver it to those in need.</p>
+    <div>
+      <a href="{% url 'donate_food' %}" class="btn btn-lg btn-danger me-3">🍽 Donate Now</a>
+      <a href="{% url 'join_team' %}" class="btn btn-lg btn-outline-light">🤝 Join the Mission</a>
+    </div>
+  </div>
+</div>
+
+<!-- Services Section -->
+<section class="py-5 text-center bg-white">
+  <div class="container">
+    <h2 class="mb-5 fw-bold">🚚 How We Make a Difference</h2>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="zoom-in">
+        <img src="{% static 'images/collect.png' %}" width="80" class="mb-3 shadow-sm rounded-circle bg-light p-3" />
+        <h5 class="fw-semibold">We Collect</h5>
+        <p>From weddings, hotels, caterers, and small businesses</p>
+      </div>
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+        <img src="{% static 'images/process.png' %}" width="80" class="mb-3 shadow-sm rounded-circle bg-light p-3" />
+        <h5 class="fw-semibold">We Process</h5>
+        <p>Ensure food safety & hygienic packaging with care</p>
+      </div>
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+        <img src="{% static 'images/deliver.png' %}" width="80" class="mb-3 shadow-sm rounded-circle bg-light p-3" />
+        <h5 class="fw-semibold">We Deliver</h5>
+        <p>To shelters, orphanages & families in underserved areas</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Impact Section -->
+<section class="bg-light py-5 text-center">
+  <div class="container">
+    <h2 class="fw-bold mb-5">🌟 Our Impact So Far</h2>
+    <div class="row">
+      <div class="col-md-3" data-aos="fade-up">
+        <h3 class="text-success display-6 fw-bold">10,000+</h3>
+        <p>Meals Served</p>
+      </div>
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-primary display-6 fw-bold">500+</h3>
+        <p>Volunteers Nationwide</p>
+      </div>
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-warning display-6 fw-bold">50+</h3>
+        <p>Food Partners</p>
+      </div>
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+        <h3 class="text-danger display-6 fw-bold">15+</h3>
+        <p>Cities Reached</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Carousel -->
+<section class="py-5 bg-white">
+  <div class="container text-center">
+    <h2 class="mb-5 fw-bold">❤️ Voices of Change</h2>
+    <div id="testimonialCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <blockquote class="blockquote">
+            <p class="fs-4">“Food Bridge helped feed over 300 people after my wedding. I'm grateful.”</p>
+            <footer class="blockquote-footer mt-3">Meera Singh, Delhi</footer>
+          </blockquote>
+        </div>
+        <div class="carousel-item">
+          <blockquote class="blockquote">
+            <p class="fs-4">“Their volunteers serve food with dignity. A beautiful initiative.”</p>
+            <footer class="blockquote-footer mt-3">Ramesh, Street Shelter, Jaipur</footer>
+          </blockquote>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-dark rounded-circle p-2"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-dark rounded-circle p-2"></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

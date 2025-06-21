@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Thank You - Food Bridge{% endblock %}
+
+{% block content %}
+<style>
+  .thankyou-container {
+    max-width: 600px;
+    margin: 80px auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    text-align: center;
+  }
+
+  .thankyou-container h2 {
+    color: #28a745;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .thankyou-container p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+  }
+
+  .btn-home {
+    background: linear-gradient(45deg, #dc3545, #a71d2a);
+    color: white;
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    display: inline-block;
+  }
+
+  .btn-home:hover {
+    background: linear-gradient(45deg, #a71d2a, #dc3545);
+  }
+</style>
+
+<div class="thankyou-container">
+  <h2>🎉 Thank You!</h2>
+  <p>Your food donation has been received. Our volunteers will contact you soon.</p>
+  <a href="/" class="btn-home">Back to Home</a>
+</div>
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block title %}Join Our Team - Food Bridge{% endblock %}
+
+{% block content %}
+<style>
+  .join-container {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  .join-container h2 {
+    font-weight: 700;
+    color: #28a745; /* Bootstrap success green */
+    margin-bottom: 1rem;
+  }
+
+  .join-container p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+  }
+
+  form label {
+    font-weight: 600;
+    color: #333;
+  }
+
+  form input, form textarea, form select {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    width: 100%;
+  }
+
+  form input:focus, form textarea:focus, form select:focus {
+    outline: none;
+    border-color: #28a745;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+  }
+
+  button.btn-dark {
+    background: linear-gradient(45deg, #343a40, #23272b);
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.4s ease;
+  }
+
+  button.btn-dark:hover {
+    background: linear-gradient(45deg, #23272b, #343a40);
+  }
+
+  .alert-success {
+    max-width: 600px;
+    margin: 20px auto;
+    font-weight: 600;
+  }
+</style>
+
+<div class="join-container">
+  <div class="text-center">
+    <h2>🤝 Join the Movement</h2>
+    <p>Become a volunteer and be the reason someone eats today.</p>
+  </div>
+
+  {% if success %}
+  <div class="alert alert-success">🎉 Thanks for joining! We'll be in touch soon.</div>
+  {% endif %}
+
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-dark mt-3 w-100">Join Now</button>
+  </form>
+</div>
+{% endblock %}

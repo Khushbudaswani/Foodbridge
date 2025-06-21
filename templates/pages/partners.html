@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Our Partners - Food Bridge{% endblock %}
+{% block content %}
+<div class="container py-5 text-center">
+  <h1 class="display-4">🤝 Our Partners</h1>
+  <p class="lead">Join 50+ food businesses in reducing hunger and waste.</p>
+
+  <div class="row text-center mt-4">
+    <div class="col-md-3">
+      <img src="{% static 'images/mcdonalds.png' %}" class="img-fluid" alt="McDonald's">
+    </div>
+    <div class="col-md-3">
+      <img src="{% static 'images/dominos.png' %}" class="img-fluid" alt="Domino's">
+    </div>
+    <div class="col-md-3">
+      <img src="{% static 'images/localdhaba.png' %}" class="img-fluid" alt="Local Dhaba">
+    </div>
+    <div class="col-md-3">
+      <img src="{% static 'images/cafe24.png' %}" class="img-fluid" alt="Cafe24">
+    </div>
+  </div>
+
+  <div class="mt-5">
+    <a href="{% url 'contact' %}" class="btn btn-outline-success btn-lg">Become a Partner</a>
+  </div>
+</div>
+{% endblock %}

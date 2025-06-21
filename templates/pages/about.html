@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}About Us - Food Bridge{% endblock %}
+
+{% block content %}
+<style>
+  .mission-section {
+    background: #fff3f3;
+    padding: 60px 20px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  }
+  .highlight {
+    font-weight: 600;
+    color: #dc3545;
+  }
+  .impact-list .list-group-item {
+    background-color: #fff;
+    border: none;
+    font-size: 1.05rem;
+  }
+  .impact-list .list-group-item::before {
+    content: "✅ ";
+    color: green;
+    font-weight: bold;
+  }
+</style>
+
+<div class="container py-5">
+  <div class="text-center mb-5">
+    <h1 class="display-4">🌉 About Food Bridge</h1>
+    <p class="lead">Connecting hearts through food. Turning waste into hope.</p>
+  </div>
+
+  <div class="row align-items-center mission-section">
+    <div class="col-md-6 mb-4 mb-md-0">
+      <img src="{% static 'images/team.jpg' %}" class="img-fluid rounded shadow" alt="Our Team">
+    </div>
+    <div class="col-md-6">
+      <h2 class="mb-3">What We Do</h2>
+      <p>
+        <span class="highlight">Food Bridge</span> is a volunteer-driven initiative focused on redirecting surplus food from
+        hotels, restaurants, weddings, parties, and events to people in need. Instead of letting good food go to waste,
+        we ensure it finds a plate — not a bin.
+      </p>
+      <p>We connect food donors with real-time needs via our volunteers, and help nourish underserved communities with dignity.</p>
+    </div>
+  </div>
+
+  <div class="text-center my-5">
+    <h2>🌟 Our Impact</h2>
+    <p>We believe in measurable change and transparent actions.</p>
+    <div class="row text-center mt-4">
+      <div class="col-md-4">
+        <h3 class="text-success display-6">15+</h3>
+        <p>Cities Served</p>
+      </div>
+      <div class="col-md-4">
+        <h3 class="text-primary display-6">10,000+</h3>
+        <p>Families Fed</p>
+      </div>
+      <div class="col-md-4">
+        <h3 class="text-danger display-6">50+</h3>
+        <p>Food Partners</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="impact-list mt-5">
+    <h3 class="text-center mb-4">💡 How We Operate</h3>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Collect leftover food from restaurants, parties, events</li>
+      <li class="list-group-item">Ensure quality checks and hygiene protocols</li>
+      <li class="list-group-item">Distribute food to shelters, slums, orphanages, and streets</li>
+      <li class="list-group-item">Engage volunteers to enable last-mile delivery</li>
+      <li class="list-group-item">Educate communities about food waste and hunger</li>
+    </ul>
+  </div>
+</div>
+{% endblock %}
