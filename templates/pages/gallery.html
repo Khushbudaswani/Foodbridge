@@ -3,18 +3,77 @@
 
 {% block title %}Gallery - Food Bridge{% endblock %}
 {% block content %}
+<style>
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px; /* Space between images */
+  justify-content: center;
+}
+.gallery-item {
+  position: relative; /* This is crucial for positioning the overlay */
+  cursor: pointer;
+  overflow: hidden; /* Hides parts of the image that might zoom outside the container */
+  border-radius: 8px; /* Optional: adds rounded corners */
+}
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.4s ease; /* Smooth zoom effect on the image */
+}
+.gallery-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.overlay-text {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}
+.gallery-item:hover .overlay {
+  opacity: 1; /* Show the overlay on hover */
+}
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+</style>
 <h2>Gallery</h2>
 <p>Here are some photos from our food donation drives and volunteer activities.</p>
 
 <div class="row">
   <div class="col-md-4 mb-3">
-    <img src="{% static 'images/donation1.jpg' %}" class="img-fluid rounded" alt="Donation 1">
+    <div class="gallery-item">
+      <img src="{% static 'images/donation1.jpg' %}" class="img-fluid rounded" alt="Fresh produce being organized">
+      <div class="overlay">
+        <div class="overlay-text">Fresh Veggies</div>
+      </div>
+    </div>
   </div>
   <div class="col-md-4 mb-3">
-    <img src="{% static 'images/donation2.jpg' %}" class="img-fluid rounded" alt="Donation 2">
+    <div class="gallery-item">
+      <img src="{% static 'images/donation2.jpg' %}" class="img-fluid rounded" alt="Donation box with canned goods">
+      <div class="overlay">
+        <div class="overlay-text">Donation Drive</div>
+      </div>
+    </div>
   </div>
   <div class="col-md-4 mb-3">
-    <img src="{% static 'images/volunteers.jpg' %}" class="img-fluid rounded" alt="Volunteers">
+    <div class="gallery-item">
+      <img src="{% static 'images/volunteers.jpg' %}" class="img-fluid rounded" alt="A volunteer serving food">
+      <div class="overlay">
+        <div class="overlay-text">Our Volunteers</div>
+      </div>
+    </div>
   </div>
 </div>
 {% endblock %}
