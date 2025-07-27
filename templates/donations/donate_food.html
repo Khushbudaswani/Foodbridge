@@ -67,6 +67,13 @@
   <div class="alert alert-success">✅ Thank you for donating food! We’ll reach out soon.</div>
   {% endif %}
 
+  {% if form.errors %}
+    <div class="alert alert-danger">
+      Please correct the errors below and resubmit the form.
+    </div>
+  {% endif %}
+
+
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
