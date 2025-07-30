@@ -1,7 +1,10 @@
-from django.shortcuts import render
-from donations.forms import DonationForm
-from django.core.mail import send_mail
 from django.conf import settings
+from django.core.mail import send_mail
+from django.shortcuts import render
+
+from donations.forms import DonationForm
+
+
 def donate_food(request):
     """
     Handles food donation form submission and email notification.
